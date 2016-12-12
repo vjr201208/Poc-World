@@ -44,8 +44,8 @@ WORKDIR /root/workspace
 RUN git clone https://github.com/vjr201208/Poc-World.git
 
 # build app
-WORKDIR /root/workspace/Poc-World
+WORKDIR /root/workspace/Poc-World/Poc-SpringBoot
 RUN mvn clean install
 EXPOSE 8080
-RUN bash -c 'touch /root/workspace/Poc-World/target/poc-springboot.jar'
-ENTRYPOINT ["java","-Dspring.data.riak.uri=riakdb://riakdb/micros", "-Djava.security.egd=file:/dev/./urandom","-jar","/root/workspace/Poc-World/target/poc-springboot.jar"]
+RUN bash -c 'touch /root/workspace/Poc-World/Poc-SpringBoot/target/poc-springboot.jar'
+ENTRYPOINT ["java","-Dspring.data.riak.uri=riakdb://riakdb/micros", "-Djava.security.egd=file:/dev/./urandom","-jar","/root/workspace/Poc-World/Poc-SpringBoot/target/poc-springboot.jar"]
